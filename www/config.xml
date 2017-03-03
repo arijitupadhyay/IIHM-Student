@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.poligon.PujaFinder"
+        id        = "com.poligon.IIHMStudent"
         version   = "1.0.1">
 
-    <name>Puja Finder</name>
+    <name>IIHM Student</name>
 
     <description>
-        Sharodshree Puja Finder
+        IIHM Student Performance App
     </description>
 
     <author href="http://poligon.in" email="info@poligononline.com">
