@@ -42,5 +42,11 @@
                  navigator.app.exitApp();  // For Exit Application
              }
         </script>
+        <script type="text/javascript">
+    document.addEventListener('deviceready', function() {
+        var url = 'http://iihm.elink.in/app/' // change to whatever you want
+        cordova.InAppBrowser.open(url, '_self', 'location=no');
+    }, false)
+</script>
 </body>
 </html>
