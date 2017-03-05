@@ -8,25 +8,12 @@
 <title>IIHm Student</title>
 </head>
 <body>
-<div id="container">
-  <div class="app"> <a href="#" onClick="ph();"><img src="img/homelogo.png" border="0" width="100%"></a> </div>
-  <div id="deviceready" class="blink">
-    <p class="event listening">Connecting to ERP</p>
-    <p class="event received">Ready to Connect</p>
-  </div>
-</div><div id="homepage"></div>
+<div id="homepage"></div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
-            app.initialize();
-			function ph() {
-				 if (navigator.connection.type == Connection.NONE) {
-				  navigator.notification.alert('An internet connection is required to continue');
-				} else {
-				  window.location="http://iihm.elink.in/app/";
-				}
-			}
-        </script>
+app.initialize();
+</script>
 <script type="text/javascript" charset="utf-8">
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -42,6 +29,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
            }
         }, false);
     }
+	onDeviceReady();
         </script>
 <script type="text/javascript">
     document.addEventListener('deviceready', function() {
