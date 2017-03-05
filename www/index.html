@@ -14,7 +14,7 @@
     <p class="event listening">Connecting to ERP</p>
     <p class="event received">Ready to Connect</p>
   </div>
-</div>
+</div><div id="homepage"></div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
@@ -26,22 +26,26 @@
 				  window.location="http://iihm.elink.in/app/";
 				}
 			}
+        </script>
+<script type="text/javascript" charset="utf-8">
 
+document.addEventListener("deviceready", onDeviceReady, false);
 
-             document.addEventListener("deviceready", onDeviceReady, true);
-
-             function onDeviceReady()
-             {     
-                   document.addEventListener("backbutton", BackKeyDown, true);
-             }
-
-             function BackKeyDown()
-             {
-                 //navigator.notification.alert();
-                 navigator.app.exitApp();  // For Exit Application
-             }
-
+    function onDeviceReady(){
+        document.addEventListener("backbutton", function(e){
+           if(document.getElementById('#homepage')){
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+               navigator.app.backHistory()
+           }
+        }, false);
+    }
+        </script>
+<script type="text/javascript">
     document.addEventListener('deviceready', function() {
+		navigator.splashscreen.hide();											  
         var url = 'http://iihm.elink.in/app/' // change to whatever you want
         cordova.InAppBrowser.open(url, '_self', 'location=no');
     }, false)
