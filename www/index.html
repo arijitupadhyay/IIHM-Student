@@ -5,24 +5,15 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
-<title>IIHm Student</title>
+<title>IIHM Student</title>
 </head>
-<body>
-<div id="container">
-  <div id="deviceready" class="blink">
-    <p class="event listening">Connecting to ERP</p>
-    <p class="event received">Ready to Connect</p>
-  </div>
-</div><div id="homepage"></div>	
-<div id="homepage"></div>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" charset="utf-8">
+    <body><div id="homepage"></div>
+        <div>
+            <script type="text/javascript" charset="utf-8">
+                document.addEventListener("deviceready", onDeviceReady, false);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-    function onDeviceReady(){
-        document.addEventListener("backbutton", function(e){
+                function onDeviceReady() {
+					document.addEventListener("backbutton", function(e){
            if(document.getElementById('#homepage')){
                e.preventDefault();
                navigator.app.exitApp();
@@ -31,15 +22,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
                navigator.app.backHistory()
            }
         }, false);
-    }
-	onDeviceReady();
-        </script>
-<script type="text/javascript">
-    document.addEventListener('deviceready', function() {
-		navigator.splashscreen.hide();											  
-        var url = 'http://iihm.elink.in/app/' // change to whatever you want
+                    
+					
+					var url = 'http://iihm.elink.in/app/' // change to whatever you want
         cordova.InAppBrowser.open(url, '_self', 'location=no');
-    }, false)
-</script>
-</body>
+                }
+            </script>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
 </html>
