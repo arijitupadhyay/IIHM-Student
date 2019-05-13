@@ -24,15 +24,7 @@ html, body
   <div id="deviceready"></div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript">
-            app.initialize();
-				 if (navigator.connection.type == Connection.NONE) {
-				  navigator.notification.alert('An internet connection is required to continue');
-				} else {
-				  window.location="https://iihm.elink.in/";
-				}
 
-        </script>
 <script type="text/javascript" charset="utf-8">
 
              document.addEventListener("deviceready", onDeviceReady, true);
@@ -47,6 +39,12 @@ html, body
                  //navigator.notification.alert();
                  navigator.app.exitApp();  // For Exit Application
              }
+        </script>
+        <script type="text/javascript">
+            app.initialize();
+				var url = 'http://iihm.elink.in/app/' // change to whatever you want
+        cordova.InAppBrowser.open(url, '_self', 'location=no');
+
         </script>
 </body>
 </html>
