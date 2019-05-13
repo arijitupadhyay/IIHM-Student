@@ -46,7 +46,7 @@
         <preference name="phonegap-version"       value="3.5.0" />
     -->
   <preference name="SplashScreen" value="splash" />
-  <preference name="SplashScreenDelay" value="10000" />
+  <preference name="SplashScreenDelay" value="5000" />
   <preference name="ShowSplashScreenSpinner" value="true" />
   <preference name="FadeSplashScreen" value="true" />
   <preference name="SplashMaintainAspectRatio" value="true" />
