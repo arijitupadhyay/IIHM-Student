@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="com.poligon.IIHMStudent" version="2.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.poligon.IIHMStudent" version="2.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
   <name>IIHM Student</name>
   <description>IIHM Student Performance App</description>
   <author href="http://poligon.in" email="info@poligononline.com">Poligon Initiative</author>
