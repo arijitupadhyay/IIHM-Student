@@ -19,28 +19,28 @@ html, body {
 }
 </style>
 </head>
-<body>
-<div id="apphome"></div>
+    <body><div id="homepage"></div>
+        <div>
+            <script type="text/javascript" charset="utf-8">
+                document.addEventListener("deviceready", onDeviceReady, false);
 
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" charset="utf-8">
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-	document.addEventListener("backbutton", function(e){
-		   if(document.getElementById('#apphome')){
-			   e.preventDefault();
-			   navigator.app.exitApp();
-		   }
-		   else {
-			   navigator.app.backHistory()
-		   }
-	 }, false);	
-	StatusBar.hide();
-	var url = 'https://iihm.elink.in/app/'; // change to whatever you want
-	cordova.InAppBrowser.open(url, '_self', 'location=no');
-}
-</script>
-<script type="text/javascript" src="cordova.js"></script>
-</body>
+                function onDeviceReady() {
+					document.addEventListener("backbutton", function(e){
+           if(document.getElementById('#homepage')){
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+               navigator.app.backHistory()
+           }
+        }, false);
+                    
+					
+					var url = 'https://iihm.elink.in/app/'; // change to whatever you want
+        cordova.InAppBrowser.open(url, '_self', 'location=no');
+                }
+            </script>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
 </html>
