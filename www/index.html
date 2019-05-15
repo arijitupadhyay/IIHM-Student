@@ -31,10 +31,8 @@ function onDeviceReady()
 {     
    document.addEventListener("backbutton", BackKeyDown, true);
    StatusBar.hide();
-		if (typeof AndroidFullScreen !== 'undefined') {   // Fullscreen plugin exists ?
-		  function errorFunction(error) { console.error(error); }
-		  AndroidFullScreen.isSupported(AndroidFullScreen.immersiveMode, errorFunction);
-		}
+	var url = 'https://iihm.elink.in/app/'; // change to whatever you want
+	cordova.InAppBrowser.open(url, '_self', 'location=no');
 }
 
 function BackKeyDown()
@@ -42,10 +40,6 @@ function BackKeyDown()
  //navigator.notification.alert();
  navigator.app.exitApp();  // For Exit Application
 }
-</script>
-<script type="text/javascript">
-var url = 'https://iihm.elink.in/app/'; // change to whatever you want
-cordova.InAppBrowser.open(url, '_self', 'location=no');
 </script>
 </body>
 </html>
