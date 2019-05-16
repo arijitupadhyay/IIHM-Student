@@ -28,10 +28,14 @@ html, body
 <script type="text/javascript" charset="utf-8">
 
              document.addEventListener("deviceready", onDeviceReady, true);
-alert("alert1"& window.location);
+alert("alert1");
+	alert(window.location);
              function onDeviceReady()
              {     
-		     alert("alert2"& window.location);
+alert("alert2");
+		     var url = 'https://iihm.elink.in/app/'; // change to whatever you want
+        cordova.InAppBrowser.open(url, '_self', 'location=no');
+	alert(window.location);
                    document.addEventListener("backbutton", BackKeyDown, true);
 				   StatusBar.hide();
 						if (typeof AndroidFullScreen !== 'undefined') {   // Fullscreen plugin exists ?
@@ -42,13 +46,15 @@ alert("alert1"& window.location);
 
              function BackKeyDown()
              {
+		     alert("alert3");
+	alert(window.location);
                  navigator.notification.alert();
                  navigator.app.exitApp();  // For Exit Application
              }
         </script>
         <script type="text/javascript">
             app.initialize();
-	    window.location = 'http://iihm.elink.in/app/' // change to whatever you want
+	
 
         </script>
 </body>
