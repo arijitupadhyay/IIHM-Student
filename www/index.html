@@ -6,37 +6,47 @@
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>IIHM Student</title>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
-    function onLoad() {
-		//alert("pagestart");
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        // Register the event listener
-		console.log('device ready');
-		//alert("devicereadynow");
-        document.addEventListener("backbutton", onBackKeyDown, false);
-		StatusBar.hide();
-		var url = 'https://iihm.elink.in/app/' 
-        cordova.InAppBrowser.open(url, '_self', 'location=no');
-    }
-
-    // Handle the back button
-    //
-    function onBackKeyDown() {
-		alert("backbuttonclicked");
-		console.log('backbuttonclicked');
-    }
-
-    </script>
 </head>
-<body onload="onLoad()">
-</body>
+    <body><div id="homepage"></div>
+        <div>
+            <script type="text/javascript" charset="utf-8">
+var myElement = document.getElementById("homepage");
+if(myElement){
+  alert("homepage div found");
+
+}
+                document.addEventListener("deviceready", onDeviceReady, false);
+alert("pagestart");
+	
+alert(window.location);
+                function onDeviceReady() {
+alert("deviceready");
+	
+alert(window.location);
+alert(document.getElementById('homepage'));
+					document.addEventListener("backbutton", function(e){
+           if(myElement){
+alert("backbuttonclicked");
+
+alert(myElement);
+	
+alert(window.location);
+navigator.notification.alert();
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+navigator.notification.alert();
+               navigator.app.backHistory()
+           }
+        }, false);
+                    
+					
+	var url = 'https://iihm.elink.in/app/'; // change to whatever you want
+        cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
+                }
+            </script>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
 </html>
