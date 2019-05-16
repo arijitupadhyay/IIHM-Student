@@ -3,59 +3,40 @@
 <head>
 <meta charset="utf-8" />
 <meta name="format-detection" content="telephone=no" />
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>IIHM Student</title>
-<style>
-html, body
-{
-    height: 100%;
-    width:100%;
-    margin:0;
-    padding:0;	
-    background:url(img/homelogo.png);
-	background-color:#000;
-    background-position:50% 50%;
-    background-repeat:no-repeat;
-}
-</style>
-</head>
-<body>
-  <div id="deviceready"></div>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-<script type="text/javascript" charset="utf-8">
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+		//alert("pagestart");
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-             document.addEventListener("deviceready", onDeviceReady, true);
-alert("alert1");
-	alert(window.location);
-             function onDeviceReady()
-             {     
-alert("alert2");
-		     var url = 'https://iihm.elink.in/app/'; // change to whatever you want
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+		console.log('device ready');
+		//alert("devicereadynow");
+        document.addEventListener("backbutton", onBackKeyDown, false);
+		StatusBar.hide();
+		var url = 'https://iihm.elink.in/app/' 
         cordova.InAppBrowser.open(url, '_self', 'location=no');
-	alert(window.location);
-                   document.addEventListener("backbutton", BackKeyDown, true);
-				   StatusBar.hide();
-						if (typeof AndroidFullScreen !== 'undefined') {   // Fullscreen plugin exists ?
-						  function errorFunction(error) { console.error(error); }
-						  AndroidFullScreen.isSupported(AndroidFullScreen.immersiveMode, errorFunction);
-						}
-             }
+    }
 
-             function BackKeyDown()
-             {
-		     alert("alert3");
-	alert(window.location);
-                 navigator.notification.alert();
-                 navigator.app.exitApp();  // For Exit Application
-             }
-        </script>
-        <script type="text/javascript">
-            app.initialize();
-	
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+		alert("backbuttonclicked");
+		console.log('backbuttonclicked');
+    }
 
-        </script>
+    </script>
+</head>
+<body onload="onLoad()">
 </body>
 </html>
