@@ -23,7 +23,7 @@ html, body
 <body>
   <div id="deviceready"></div>
 <script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+
 
 <script type="text/javascript" charset="utf-8">
 
@@ -34,8 +34,8 @@ html, body
              {     
                    document.addEventListener("backbutton", BackKeyDown,false);
 				   StatusBar.hide();
-				   //var url = 'https://iihm.elink.in/app/' // change to whatever you want
-       //cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
+				   var url = 'https://iihm.elink.in/app/' // change to whatever you want
+       			   cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
 
              }
 
@@ -43,16 +43,10 @@ html, body
              {
                  alert("backbuttonclicked");
 				 //navigator.notification.alert();
-		     window.plugins.appMinimize.minimize();
+		     	window.plugins.appMinimize.minimize();
                  //navigator.app.exitApp();  // For Exit Application
              }
         </script>
-        <script type="text/javascript">
-            app.initialize();
-		
-	   window.location = 'https://iihm.elink.in/app/' 
-		
 
-        </script>
 </body>
 </html>
