@@ -30,6 +30,7 @@
   <allow-intent href="geo:*" />
   <access origin="whatsapp:*" launch-external="yes" />
   <access origin="https://wa.me/*" launch-external="yes" />
+  <access origin="https://goo.gl/maps/*" launch-external="yes" />
   <platform name="android">
     <allow-intent href="market:*" />
   </platform>
