@@ -21,30 +21,30 @@ html, body {
 </style>
 </head>
 <body>
-<div id="deviceready"></div>
+<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-             //document.addEventListener("deviceready", onDeviceReady, true);
-			 document.addEventListener("deviceready", onDeviceReady, false);
+ document.addEventListener("deviceready", onDeviceReady, false);
+var url = 'https://iihm.elink.in/app/' // change to whatever you want
+ function onDeviceReady()
+ {     
+	   document.addEventListener("backbutton", BackKeyDown,false);
+	   //alert("i am ready");
+	   //window.open = cordova.InAppBrowser.open;
+	   
+	   //var ref = cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
+	   //alert("i loaded");
+ }
 
-             function onDeviceReady()
-             {     
-                   document.addEventListener("backbutton", BackKeyDown,false);
-				   StatusBar.hide();
-				   var url = 'https://iihm.elink.in/app/' // change to whatever you want
-       			   cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
+ function BackKeyDown()
+ {
+	 //alert("backbuttonclicked");
+	 //ref.close();
+	 navigator.app.exitApp();  // For Exit Application
+ }
+ 
+ window.location = url;
+</script>
 
-             }
-
-             function BackKeyDown()
-             {
-                 //alert("backbuttonclicked");
-				 //navigator.notification.alert();
-		     	//window.plugins.appMinimize.minimize();
-                 navigator.app.exitApp();  // For Exit Application
-             }
-        </script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>        
 </body>
 </html>
