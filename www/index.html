@@ -14,7 +14,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background: url(img/homelogo.png);
-	background-color: #000;
+	background-color: #082c55;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 }
@@ -32,7 +32,7 @@ var url = 'https://iihm.elink.in/app/' // change to whatever you want
 	   //alert("i am ready");
 	   //window.open = cordova.InAppBrowser.open;
 	   
-	   //var ref = cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
+	   var ref = cordova.InAppBrowser.open(url, '_self', 'location=no;hardwareback=yes');
 	   //alert("i loaded");
  }
 
@@ -43,7 +43,7 @@ var url = 'https://iihm.elink.in/app/' // change to whatever you want
 	 navigator.app.exitApp();  // For Exit Application
  }
  
- window.location = url;
+ //window.location = url;
 </script>
 
 </body>
