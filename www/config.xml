@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="com.poligon.IIHMStudent" version="2.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.poligon.IIHMStudent" version="4.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
   <name>IIHM Student</name>
   <description>IIHM Student Performance App</description>
   <author href="http://poligon.in" email="info@poligononline.com">Poligon Initiative</author>
-  <preference name="phonegap-version" value="cli-8.1.1" />
+  <preference name="phonegap-version" value="cli-9.0.0" />
   <preference name="permissions"                value="none"/>
   <preference name="orientation"                value="default" />
   <preference name="target-device"              value="universal" />
   <preference name="fullscreen"                 value="true" />
+  <preference name="StatusBarOverlaysWebView" value="true" />
+  <preference name="prerendered-icon"           value="true" />
+  <preference name="stay-in-webview"            value="true" />
+  <preference name="detect-data-types"          value="true" />
+  <preference name="exit-on-suspend"            value="false" />
+  <preference name="disable-cursor"             value="false" />
+  <preference name="android-installLocation"    value="auto" />
   <!-- Core plugins -->
   <plugin name="cordova-plugin-camera"/>
   <plugin name="cordova-plugin-device"/>
-  <plugin name="cordova-plugin-file"/>
   <plugin name="cordova-plugin-dialogs"/>
+  <plugin name="cordova-plugin-file"/>
   <plugin name="cordova-plugin-geolocation"/>
+  <plugin name="cordova-plugin-globalization"/>
   <plugin name="cordova-plugin-inappbrowser"/>
-  <plugin name="cordova-plugin-appminimize"/>
   <plugin name="cordova-plugin-network-information"/>
   <plugin name="cordova-plugin-statusbar"/>
+  <plugin name="cordova-plugin-fullscreen"/>
   <plugin name="cordova-plugin-whitelist"/>
   <icon src="icon.png" />
   <access origin="*"/>
@@ -29,10 +37,11 @@
   <allow-intent href="sms:*" />
   <allow-intent href="mailto:*" />
   <allow-intent href="geo:*" />
-  <access origin="whatsapp:*" launch-external="yes" />
+  
   <access origin="https://wa.me/*" launch-external="yes" />
   <access origin="https://goo.gl/maps/*" launch-external="yes" />
   <platform name="android">
     <allow-intent href="market:*" />
+	<allow-intent href="whatsapp:*" />	
   </platform>
 </widget>
